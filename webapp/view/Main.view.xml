@@ -1,0 +1,128 @@
+<mvc:View xmlns:core="sap.ui.core" controllerName="gestaodecadastro.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <ObjectHeader title="Cadastrar Clientes e Produtos" />
+        <IconTabBar>
+            <items>
+                <IconTabFilter text="Clientes" key="clientes" icon="sap-icon://customer-and-contacts">
+                    <SearchField placeholder="Buscar cliente" width="30%" />
+                    <content>
+                        <VBox>
+                            <Button text="Cadastrar Cliente" press="onCadastrarCliente"
+                                type="Emphasized" />
+                        </VBox>
+                        <Dialog id="idDialog" title="Cadastra Cliente"
+                            beginButton="{{
+                        text: 'Salvar', press: 'onSaveDialog'}}"
+                            endButton="{{text: 'Cancelar', press: 'onCloseDialog'}}">
+                            <content>
+                                <VBox>
+                                    <Label text="Nome:" />
+                                        <Input id="idInputName" placeholder="Nome do cliente" />
+                                    <Label text="Idade:"/>
+                                        <Input id="idInputAge" placeholder="Idade do cliente" />
+                                    <Label text="Telefone:"/>
+                                        <Input id="idInputPhone" placeholder="Telefone do cliente" />
+                                    <Label text="E-mail:"/>
+                                        <Input id="idInputEmail" placeholder="E-mail do cliente" />
+                                        <Button text="Cadastrar" id="idCadastrar" press="onCadastrar"/>
+                                </VBox>
+                            </content>
+                        </Dialog>
+            
+                    </content>
+                    <Table>
+                        <columns>
+                            <!-- Nome-->
+                            <Column>
+                                <Text text="Name"></Text>
+                            </Column>
+                            <!--Idade -->
+                            <Column>
+                                <Text text="Age"></Text>
+                            </Column>
+                            <!-- Contato-->
+                            <Column>
+                                <Text text="Phone"></Text>
+                            </Column>
+                            <!-- Email-->
+                            <Column>
+                                <Text text="E-mail"></Text>
+                            </Column>
+                        </columns>
+
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <!-- 1ª Coluna Nome-->
+                                    <Text text="Stalisson Pereira"></Text>
+                                    <!-- 2ª Coluna Idade-->
+                                    <Text text="32"></Text>
+                                    <!-- 3ª Coluna Contato-->
+                                    <Text text="123456789123"></Text>
+                                    <!-- 1ª Coluna E-mail-->
+                                    <Text text="stalisson@email.com"></Text>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </IconTabFilter>
+                <IconTabFilter text="Produtos" key="produtos" icon="sap-icon://product">
+                    <SearchField placeholder="Buscar produto" width="30%"></SearchField>
+                    <content>
+                        <VBox>
+                            <Button text="Cadastrar Produto" press="onCadastrarProduto" type="Emphasized" />
+                        </VBox>
+                        <Dialog id="idDialogProduct" title="Cadastra Produto"
+                        beginButton="{{
+                    text: 'Salvar', press: 'onSaveDialogProduct'}}"
+                        endButton="{{text: 'Cancelar', press: 'onCloseDialogProduct'}}" >
+                    <content>
+                        <VBox>
+                            <Label text="Nome:"/>
+                            <Input placeholder="Nome do produto" id="inputName"/>
+                            <Label text="Descrição:"/>
+                            <Input placeholder="Descrição do produto" id="inputDesc"/>
+                            <Label text="Preço:"/>
+                            <Input placeholder="Preço do produto" id="inputPrice"/>
+                            <Label text="Quantidade:"/>
+                            <Input placeholder="Quantidade do produto" id="inputQuant"/>
+                            <Button text="Cadastrar" press="onCadastrarProduct"/>
+                        </VBox>
+                    </content>
+                    </Dialog>
+                    </content>
+                    <Table>
+                        <columns>
+                            <Column>
+                                <Text text="Nome"></Text>
+                            </Column>
+                            <Column>
+                                <Text text="Descrição"></Text>
+                            </Column>
+                            <Column>
+                                <Text text="Preço"></Text>
+                            </Column>
+                            <Column>
+                                <Text text="Quantidade "></Text>
+                            </Column>
+                        </columns>
+                    <ColumnListItem>
+                        <cells>
+                        <!-- 1ª Coluna Nome-->
+                        <Text text="Notebook VAIO"></Text>
+                        <!-- 2ª Coluna Descrição-->
+                        <Text text="i9 12º Geração 12GB 1TB SSD MVMe"></Text>
+                        <!-- 3ª Coluna Preço-->
+                        <Text text="10000,00"></Text>
+                        <!-- 1ª Coluna Quantidade-->
+                        <Text text="0001"></Text>
+                        </cells>
+                    </ColumnListItem>
+                </Table>
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+    </Page>
+</mvc:View>
